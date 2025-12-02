@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Thunder Review</title>
+
+
+    <!-- W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!-- JS -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+
+<header class="header">
+    <h1>War Thunder — Full Review</h1>
+    <p class="subtitle">Vehicles • Nations • Game Modes • Realistic Combat</p>
+
+
+    <!-- DARK MODE TOGGLE -->
+    <button id="darkToggle" class="dark-btn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+</header>
+
+
+<!-- NAVIGATION -->
+<nav class="topnav">
+    <button class="tab-btn active" data-tab="home"><i class="fa-solid fa-house"></i> Home</button>
+    <button class="tab-btn" data-tab="vehicles"><i class="fa-solid fa-car"></i> Vehicles</button>
+    <button class="tab-btn" data-tab="nations"><i class="fa-solid fa-flag"></i> Nations</button>
+    <button class="tab-btn" data-tab="modes"><i class="fa-solid fa-crosshairs"></i> Game Modes</button>
+    <button class="tab-btn" data-tab="compare"><i class="fa-solid fa-table"></i> Compare</button>
+    <button class="tab-btn" data-tab="contact"><i class="fa-solid fa-envelope"></i> Contact</button>
+</nav>
+
+
+<main class="w3-content main">
+
+
+<!-- HOME TAB -->
+<section id="home" class="tab-content active fade">
+    <article class="review-card w3-padding">
+        <h2>Overall Review</h2>
+
+
+        <div class="meta">
+            <span class="badge">Realistic</span>
+            <span class="badge">Multiplayer</span>
+            <span class="badge">Combined Arms</span>
+            <span class="score">8.7 / 10</span>
+        </div>
+
+
+        <p>
+            War Thunder is the ultimate combined-arms warfare game featuring aircraft, tanks, helicopters,
+            and naval units. With extremely detailed physics, realistic damage models, and massive tech trees,
+            it remains one of the most ambitious military combat simulators ever made.
+        </p>
+
+
+        <h3>Gallery</h3>
+        <div class="gallery">
+            <img src="https://cdn.warthunder.com/img/screenshots/227_569c3114c0f3b6.jpg">
+            <img src="https://cdn.warthunder.com/img/screenshots/224_569c30c1ca8dd2.jpg">
+            <img src="https://cdn.warthunder.com/img/screenshots/226_569c310dd1e21c.jpg">
+        </div>
+    </article>
+</section>
+
+
+<!-- VEHICLES TAB -->
+<section id="vehicles" class="tab-content fade">
+    <article class="review-card w3-padding">
+        <h2>Vehicles</h2>
+
+
+        <div class="vehicles-grid">
+            <div class="v-card">
+                <i class="fa-solid fa-tank-vest icon"></i>
+                <h3>Tanks</h3>
+                <p>Light tanks, MBTs, SPGs, anti-air vehicles, and more.</p>
+            </div>
+
+
+            <div class="v-card">
+                <i class="fa-solid fa-plane icon"></i>
+                <h3>Aircraft</h3>
+                <p>Prop planes, jets, bombers, interceptors, and attackers.</p>
+            </div>
+
+
+            <div class="v-card">
+                <i class="fa-solid fa-ship icon"></i>
+                <h3>Naval</h3>
+                <p>Coastal boats, destroyers, cruisers, and battleships.</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+
+<!-- NATIONS TAB -->
+<section id="nations" class="tab-content fade">
+    <article class="review-card w3-padding">
+        <h2>Select a Nation</h2>
+
+
+        <!-- Dropdown -->
+        <select id="nationSelect" class="dropdown">
+            <option value="">Choose a Nation</option>
+            <option>USA</option>
+            <option>Germany</option>
+            <option>USSR</option>
+            <option>Japan</option>
+            <option>Great Britain</option>
+            <option>China</option>
+            <option>Italy</option>
+            <option>France</option>
+            <option>Sweden</option>
+            <option>Israel</option>
+        </select>
+
+
+        <p id="nationInfo" class="nation-info"></p>
+    </article>
+</section>
+
+
+<!-- GAME MODES -->
+<section id="modes" class="tab-content fade">
+    <article class="review-card w3-padding">
+        <h2>Game Modes</h2>
+
+
+        <div class="modes-grid">
+            <div class="mode-card">
+                <h3>Arcade</h3>
+                <p>Easy controls, aim assists, fast gameplay.</p>
+            </div>
+
+
+            <div class="mode-card">
+                <h3>Realistic</h3>
+                <p>Reduced HUD, realistic physics, no aim assists.</p>
+            </div>
+
+
+            <div class="mode-card">
+                <h3>Simulator</h3>
+                <p>Full realism, cockpit view only, no markers.</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+
+<!-- VEHICLE COMPARISON TABLE -->
+<section id="compare" class="tab-content fade">
+    <article class="review-card w3-padding">
+        <h2>Vehicle Comparison</h2>
+
+
+        <table class="compare-table">
+  <tr>
+    <th>Vehicle</th><th>Type</th><th>BR / Tier (approx)</th><th>Notes</th>
+  </tr>
+
+
+  <!-- Heavy / Modern Tanks / MBTs -->
+  <tr>
+    <td>
+      <img src="https://militarywatchmagazine.com/m/articles/2023/09/03/article_64f45a043ffe73_57881220.jpeg" width="100px" alt="M1A2 SEP v2"><br>
+      M1A2 SEP v2
+    </td>
+    <td>Tank (MBT)</td>
+    <td>12.0</td>
+    <td>Top‑tier US MBT, very balanced.</td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <img src="https://live.staticflickr.com/4137/4933244450_9d320e2d0e_h.jpg" width="100px" alt="Strv 122B+"><br>
+      Strv 122B+
+    </td>
+    <td>Tank (MBT)</td>
+    <td>12.0</td>
+    <td>Swedish MBT, strong armour + mobility.</td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNm_Ih3hwZNQ-Q5foXjb7r45UQ91ZgYNe58eux6jz2t9W1JXL5JSGC1J1-HSV8mPVfV9uDOk2T5HMWPBE3E2hh3HIPv0KXJXxmF3-hlDHp&s=10" width="100px" alt="ZTZ‑99A"><br>
+      ZTZ‑99A
+    </td>
+    <td>Tank (MBT)</td>
+    <td>~12.0</td>
+    <td>Chinese MBT, good all‑rounder.</td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <img src="https://p.turbosquid.com/ts-thumb/JF/1dyio2/Ba/1/png/1698694876/1920x1080/fit_q87/6b467ad1c36c1a8da9550bad4d269935c1e52ebe/1.jpg" width="100px" alt="Challenger 2 TES / Black Night"><br>
+      Challenger 2 TES / Black Night
+    </td>
+    <td>Tank (MBT)</td>
+    <td>11.7</td>
+    <td>British MBT — solid protection and accuracy.</td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Destroyed_T-90M_of_Russian_Army_3.jpg/960px-Destroyed_T-90M_of_Russian_Army_3.jpg" width="100px" alt="T-90M"><br>
+      T-90M
+    </td>
+    <td>Tank (MBT)</td>
+    <td>12.0</td>
+    <td>Soviet/Russian MBT — good modern tank performance.</td>
+  </tr>
+
+
+  <!-- Repeat the same pattern for the rest of the table -->
+</table>
+
+
+
+
+    </article>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="tab-content fade">
+    <aside class="card w3-padding">
+        <h3>Contact</h3>
+        <form class="contact-form">
+            <label>Name</label>
+            <input type="text">
+
+
+            <label>Email</label>
+            <input type="email">
+
+
+            <label>Message</label>
+            <textarea rows="4"></textarea>
+
+
+            <button class="cta">Send</button>
+        </form>
+    </aside>
+</section>
+
+
+</main>
+
+
+<footer class="site-footer">
+    © 2025 War Thunder Review
+</footer>
+
+
+</body>
+</html>
+
+
+

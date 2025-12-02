@@ -1,0 +1,277 @@
+/* styles.css — full, self-contained */
+
+
+/* ------------------------------
+   CSS variables & base
+--------------------------------*/
+:root{
+  --bg: #f4f7f9;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #66707a;
+  --accent: #2b6b4a;
+  --accent2: #3c8dbc;
+  --danger: #ff4d4d;
+  --radius: 12px;
+  --transition: 220ms ease;
+}
+
+
+/* Dark mode variables (applied when .dark on <html>) */
+:root.dark {
+  --bg: #0f1620;
+  --card: #0b1220;
+  --text: #e6eef6;
+  --muted: #9fb0c1;
+  --accent: #66d6a1;
+  --accent2: #60b7e6;
+}
+
+
+/* ------------------------------
+   Reset / base
+--------------------------------*/
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+
+/* ------------------------------
+   Layout
+--------------------------------*/
+.header{
+  background: linear-gradient(180deg,var(--accent),var(--accent2));
+  color:#fff;
+  padding:18px 20px;
+  border-bottom-left-radius:var(--radius);
+  border-bottom-right-radius:var(--radius);
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:space-between;
+}
+.header .brand { display:flex; gap:12px; align-items:center; }
+.header h1{font-size:1.15rem; margin:0}
+.subtitle{opacity:0.9; font-size:.92rem}
+
+
+/* dark toggle button */
+#darkToggle{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition: var(--transition);
+}
+#darkToggle:active{ transform:translateY(1px); }
+
+
+/* topnav */
+.topnav{
+  display:flex;
+  gap:8px;
+  padding:12px 16px;
+  justify-content:center;
+  background:transparent;
+  flex-wrap:wrap;
+}
+.tab-btn{
+  border:0;
+  background: rgba(0,0,0,0.04);
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  color:var(--text);
+  transition: var(--transition);
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+}
+.tab-btn:focus{ outline:2px solid rgba(60,139,188,0.18) }
+.tab-btn:hover{ transform:translateY(-2px) }
+.tab-btn.active{
+  background: linear-gradient(90deg,var(--accent2),var(--accent));
+  color:white;
+  box-shadow: 0 8px 30px rgba(40,60,50,0.08);
+}
+
+
+/* main container */
+main.main {
+  max-width: 1100px;
+  /* CHANGED: Changed '20px auto' to '0 auto 20px'
+     (0 top, auto left/right, 20px bottom) */
+  margin: 0 auto 20px;
+  padding: 0 16px 40px;
+}
+
+
+/* 1. Default state: Content is completely removed from layout */
+.tab-content {
+  display: none;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(10,15,20,0.04);
+  margin-bottom: 18px;
+}
+
+
+/* 2. Active state: Content appears */
+.tab-content.active {
+  display: block;
+  /* We use animation instead of transition because
+     transitions don't work well when switching from display:none */
+  animation: fadeUp 0.4s ease-out;
+}
+
+
+/* 3. The Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+
+
+/* meta + badges */
+.meta{ display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap }
+.badge{ background:rgba(40,70,50,0.08); padding:6px 10px; border-radius:999px; font-weight:700; color:var(--accent) }
+.score{ margin-left:auto; font-weight:800; color:var(--accent2); background: rgba(255,255,255,0.05); padding:6px 10px; border-radius:8px }
+
+
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+}
+.gallery img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+  transition: transform 200ms;
+}
+.gallery img:hover{ transform: translateY(-4px) }
+
+
+/* responsive gallery */
+@media (max-width:900px){
+  .gallery{ grid-template-columns: repeat(2, 1fr) }
+}
+
+
+/* vehicles grid */
+.vehicles-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+.v-card{
+  background: rgba(0,0,0,0.02);
+  padding:12px;
+  border-radius:10px;
+  min-height:110px;
+}
+.v-card .icon{ font-size:20px; margin-bottom:8px; color:var(--accent2); }
+
+
+/* responsive vehicles */
+@media (max-width:900px){
+  .vehicles-grid{ grid-template-columns: repeat(1, 1fr) }
+}
+
+
+/* nations dropdown */
+.dropdown{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.08);
+  margin-bottom:12px;
+}
+
+
+/* nation info text */
+.nation-info{
+  padding:10px;
+  border-left:4px solid var(--accent2);
+  background: rgba(60,139,188,0.04);
+  border-radius:8px;
+  color:var(--muted);
+}
+
+
+/* modes grid */
+.modes-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:12px }
+.mode-card{ padding:12px; border-radius:8px; background: rgba(0,0,0,0.03) }
+
+
+/* compare table */
+.compare-table{ width:100%; border-collapse:collapse; margin-top:12px }
+.compare-table th, .compare-table td{
+  padding:10px 12px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  text-align:left;
+}
+.compare-table th{ background: rgba(0,0,0,0.02); font-weight:700 }
+
+
+/* contact form */
+.contact-form{ display:grid; gap:10px; max-width:640px }
+.contact-form input, .contact-form textarea{
+  padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08);
+  background: transparent;
+  color:var(--text);
+}
+.contact-form button.cta{
+  background: linear-gradient(90deg,var(--accent2),var(--accent));
+  color:white; border:0; padding:10px 12px; border-radius:8px; cursor:pointer;
+}
+
+
+/* inline form message */
+.form-message{
+  padding:10px; border-radius:8px; margin-top:8px; display:none;
+}
+
+
+/* footer */
+.site-footer{ text-align:center; color:var(--muted); margin-top:8px; font-size:0.95rem }
+
+
+/* accessibility improvements */
+.tab-btn[aria-selected="true"]{ box-shadow: 0 6px 18px rgba(0,0,0,0.08) }
+
+
+/* small screens */
+@media (max-width:600px){
+  .topnav{ gap:6px; padding:10px }
+  .tab-btn{ padding:8px 10px; font-size:14px }
+  .vehicles-grid{ grid-template-columns: repeat(1,1fr) }
+}
+
+
+/* end of styles.css */
+
+
+
